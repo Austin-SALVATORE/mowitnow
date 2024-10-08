@@ -21,6 +21,6 @@ public class MowerAppConfig {
         InputPort fileInput = new FileInputAdapter(inputFile, localization);
         OutputPort consoleOutput = new ConsoleOutputAdapter(localization);
         Lawn lawn = new Lawn(maxX, maxY);
-        return new MowerService(lawn, fileInput, consoleOutput);
+        return new MowerService(lawn, fileInput, consoleOutput, threadCount,localization);
     }
 }
