@@ -87,4 +87,12 @@ I use maven, but I think gradle is also good for this project.
 
 ## International
 
-Add i18Service for multi-langage usage
+Add i18n for multi-langage usage
+
+## Extention
+
+# Performance Optimization
+Add multithreading support for the future large scale usage, for example lawns with hundreds of mowers, here I am using Executor Service.
+
+# Externalize configurations
+I am putting app configuration in application.properties
