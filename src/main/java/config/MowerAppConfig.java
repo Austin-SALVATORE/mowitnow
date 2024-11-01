@@ -10,14 +10,18 @@ import ports.OutputPort;
 import java.util.Locale;
 
 public class MowerAppConfig {
+    private final LocalizationConfig localization;
+
+    public MowerAppConfig(LocalizationConfig localization) {
+        this.localization = localization;
+    }
+
     public MowerService getMowerService(String language) {
         AppConfig appConfig = new AppConfig();
         String inputFile = appConfig.getProperty("input.file");
         int maxX = appConfig.getIntProperty("lawn.maxX");
         int maxY = appConfig.getIntProperty("lawn.maxY");
         int threadCount = appConfig.getIntProperty("threads");
-        Locale locale = Locale.forLanguageTag(language);
-        LocalizationConfig localization = new LocalizationConfig(locale);
         InputPort fileInput = new FileInputAdapter(inputFile, localization);
         OutputPort consoleOutput = new ConsoleOutputAdapter(localization);
         Lawn lawn = new Lawn(maxX, maxY);

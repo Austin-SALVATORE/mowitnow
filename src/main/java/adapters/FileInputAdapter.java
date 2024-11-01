@@ -36,7 +36,7 @@ public class FileInputAdapter implements InputPort {
             if (lawnDimensions.length != 2) {
                 throw new IllegalArgumentException(localization.getMessage("error.invalid.lawn.dimensions"));
             }
-// Make sure there is not invalid lawn dimensions
+            // Make sure there is not invalid lawn dimensions
             int maxX;
             int maxY;
             try {

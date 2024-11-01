@@ -22,7 +22,7 @@ public class MowItNow {
 
         try {
             logger.info(localization.getMessage("app.start", language));
-            MowerAppConfig config = new MowerAppConfig();
+            MowerAppConfig config = new MowerAppConfig(localization);
             MowerService mowerService = config.getMowerService(language);
             mowerService.execute();
             logger.info(localization.getMessage("app.success"));
